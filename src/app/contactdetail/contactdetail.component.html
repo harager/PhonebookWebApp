@@ -1,0 +1,57 @@
+<h1>PhoneBook Contacts</h1>
+<hr>
+
+
+<button class="btn-createContact" (click)="createNewContact()">Create New Contact</button>
+<p></p>
+<div class="limiter">
+    <div class="container-table100">
+        <div class="wrap-table100">
+            <div class="table100 ver2 m-b-110">
+                <table data-vertable="ver2">
+                    <thead>
+                        <tr class="row100 head">
+                            
+                            <th class="column100 column1" data-column="column1">Contact Name</th>
+                            <th class="column100 column2" data-column="column2">Email</th>
+                            <th class="column100 column3" data-column="column3">Address</th>
+                            <th class="column100 column4" data-column="column4">Phones</th>
+                            <th class="column100 column5" data-column="column5"></th>
+                        </tr>
+                    </thead>
+<tbody>
+    <tr class="row100" *ngFor="let contact of contacts">
+        <td class="column100 column1" data-column="column1">{{contact.firstName}} {{contact.lastName}}</td>
+        <td class="column100 column2" data-column="column2">{{contact.email}}</td>
+                <td class="column100 column3" data-column="column3">{{contact.address}}</td>
+                <td class="column100 column4" data-column="column4">
+                    <table data-vertable="ver2">
+                        <tbody>
+                        <tr class="row100">
+                            <td class="column100 column4" *ngFor="let phone of contact.phones"> 
+                                {{phone.phoneNumber}}
+                            </td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </td>
+                
+                <td class="column100 column5" data-column="column5">
+                    <button class="btn-action" (click)="editContact(contact.id)">Edit Contact</button>
+                    <button class="btn-action" (click)="deleteContact(contact.id)">Delete Contact</button>
+                </td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+<div class="form-group">
+    <div class="md-errors-spacer">
+        <div>
+            {{ErrorMessage}}
+        </div>
+    </div>    
+</div>

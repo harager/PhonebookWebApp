@@ -1,0 +1,88 @@
+<form #form='ngForm' class='mb-4' autocomplete="off" (submit)="onSubmit(form)">
+    <div class="form-group">
+        <label>First Name</label>
+        <div class="col-md-8">
+        <input #FirstName="ngModel" name="FirstName" [(ngModel)] = "formModel.FirstName" required>
+        <div class="md-errors-spacer" [hidden]="FirstName.valid || FirstName.untouched">
+            <div  *ngIf="FirstName.errors && FirstName.errors.required">
+                First Name is required
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="form-group">
+        <label>Last Name</label>
+        <div class="col-md-8">
+        <input #LastName="ngModel" name="LastName" [(ngModel)] = "formModel.LastName">
+    </div>
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <div class="col-md-8">
+        <input #Email="ngModel" name="Email" [(ngModel)] = "formModel.Email" 
+        pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"> 
+        <div class="md-errors-spacer" [hidden]="Email.valid || Email.untouched">
+            <div  *ngIf="Email.errors && Email.errors.required">
+                Email is required
+            </div>
+            <div  *ngIf="Email.errors && Email.errors.pattern">
+                Email is invalid
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="form-group">
+        <label>Address</label>
+        <div class="col-md-8">
+        <input #Address="ngModel" name="Address" [(ngModel)] = "formModel.Address">
+    </div>
+    </div>
+    <div class="form-group">
+        <label>Phone Number 1</label>
+        <div class="col-md-8">
+        <input #PhoneNumber1="ngModel" name="PhoneNumber1" [(ngModel)] = "formModel.PhoneNumber1">
+        <input type="hidden" #UserId="ngModel" name="PhoneNumber1Id" [(ngModel)] = "formModel.PhoneNumber1Id">
+    </div>
+    </div>
+    <div class="form-group">
+        <label>Phone Number 2</label>
+        <div class="col-md-8">
+        <input #PhoneNumber2="ngModel" name="PhoneNumber2" [(ngModel)] = "formModel.PhoneNumber2">
+        <input type="hidden" #UserId="ngModel" name="PhoneNumber2Id" [(ngModel)] = "formModel.PhoneNumber2Id">
+    </div>
+    </div>
+    
+<!--     
+    <div *ngFor="let item of formModel.Phones; let i = index;">
+        <div class="form-group">
+            <label>Phone Number</label>
+            <input #item.PhoneNumber[i]="ngModel" name="item.PhoneNumber[i]" [(ngModel)] = "item.PhoneNumber[i]">
+        </div>
+       
+   </div>
+    
+
+    <div class="form-group">
+        <label>Phone Number 1</label>
+        <input #Phones[0].PhoneNumber="ngModel" name="Phones[0].PhoneNumber" [(ngModel)] = "formModel.Phones[0].PhoneNumber">
+    </div>
+    <div class="form-group">
+        <label>Phone Number 2</label>
+        <input #Phones[1].PhoneNumber="ngModel" name="Phones[1].PhoneNumber" [(ngModel)] = "formModel.Phones[1].PhoneNumber">
+    </div> -->
+    <div class="form-group">
+            <button type="submit" class="btn-createContact" [disabled]="form.invalid">{{ btnName }}</button>
+    </div>
+    <div class="form-group">
+        <button class="btn-createContact" (click)="back()">Back</button>
+    </div>
+    <input type="hidden" #UserId="ngModel" name="UserId" [(ngModel)] = "formModel.UserId">
+    <input type="hidden" #Id="ngModel" name="Id" [(ngModel)] = "formModel.Id">
+    <div class="form-group">
+        <div class="md-errors-spacer">
+            <div>
+                {{ErrorMessage}}
+            </div>
+        </div>    
+    </div>
+</form>

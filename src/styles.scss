@@ -1,0 +1,206 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+body, html {
+    height: 100%;
+    margin: 0 auto;
+}
+
+body {
+    font-family: 'Montserrat';
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1.3em;
+    display: grid;
+    grid-template-columns: 30% auto;
+
+    a {
+        color: white;
+    }
+}
+
+section {
+    width: 80%;
+    margin: 0 auto;
+    padding: 2em;
+}
+
+.md-errors-spacer{
+  color: #e91919;
+}
+
+.btn-action {
+    background-color: #495fdf; 
+    width: 100%;
+    border: 1px;
+    border-style: inset;
+    color: white;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor:pointer;
+    &:hover {
+        background: #2b99ff;
+    }
+  }
+
+  .btn-createContact {
+    background-color: #495fdf; 
+    width: 20%;
+    border: 1px;
+    border-style: inset;
+    color: white;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor:pointer;
+    &:hover {
+        background: #2b99ff;
+    }
+  }
+  .btn-createContact:disabled {
+    cursor: default;
+    opacity: 0.5;
+    &:hover {
+      background: #495fdf;
+  }
+  
+}
+
+.btn-logout {
+    color: white;
+    padding: 0px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+  }
+
+
+
+  
+/*//////////////////////////////////////////////////////////////////
+[ Table ]*/
+
+
+  
+  
+  /*//////////////////////////////////////////////////////////////////
+  [ Table ]*/
+  table {
+    width: 100%;
+    background-color: #fff;
+  }
+  
+  th, td {
+    font-weight: unset;
+    padding-right: 10px;
+  }
+  
+  .column100 {
+    width: 130px;
+    padding-left: 25px;
+  
+  
+    &.column1 {
+      width: 265px;
+      padding-left: 42px;
+    }
+  }
+  
+  .row100 {
+    &.head th {
+      padding-top: 24px;
+      padding-bottom: 20px;
+    }
+  
+    td {
+      padding-top: 18px;
+      padding-bottom: 14px;
+    }
+  }
+  
+  .table100.ver2 {
+    td {
+      font-family: Montserrat-Regular;
+      font-size: 14px;
+      color: #808080;
+      line-height: 1.4;
+    }
+  
+    th {
+      font-family: Montserrat-Medium;
+      font-size: 12px;
+      color: #fff;
+      line-height: 1.4;
+      text-transform: uppercase;
+      background-color: #333333;
+    }
+  
+    .row100:hover td, .hov-column-ver2 {
+      background-color: #97a5f3;
+      color: #fff;
+    }
+  
+    .hov-column-head-ver2 {
+      background-color: #484848 !important;
+    }
+  
+    .row100 td:hover {
+      background-color: #233aa3;
+      color: #fff;
+    }
+  
+    // tbody tr:nth-child(even) {
+    //   background-color: #d4dafc;
+    // }
+  
+    td {
+      font-family: Montserrat-Regular;
+      font-size: 14px;
+      color: #808080;
+      line-height: 1.4;
+    }
+  
+    th {
+      font-family: Montserrat-Medium;
+      font-size: 12px;
+      color: #fff;
+      line-height: 1.4;
+      text-transform: uppercase;
+      background-color: #333333;
+    }
+  
+    .row100:hover td, .hov-column-ver2 {
+      background-color: #97a5f3;
+      color: #fff;
+    }
+  
+    .hov-column-head-ver2 {
+      background-color: #484848 !important;
+    }
+  
+    .row100 td:hover {
+      background-color: #233aa3;
+      color: #fff;
+    }
+  }

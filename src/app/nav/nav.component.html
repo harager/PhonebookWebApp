@@ -1,0 +1,21 @@
+<header>
+    <div class="container">
+      <a routerLink="/contact" class="logo">{{ appTitle }}</a>
+      <nav>
+        <ul>
+          <li *ngIf="!checkIfUserLogedIn()"><a routerLink="/contact">Phonebook contacts</a></li>
+        <ng-container *ngIf="checkIfUserLogedIn()">
+          <li><a routerLink="/login">Login</a></li>
+          <li><a routerLink="/registration">User Registration</a></li>
+        </ng-container>
+        <ng-container *ngIf="!checkIfUserLogedIn()">
+          <li><button class="btn btn-logout" (click)="onLogout()">Log Out</button></li>
+        </ng-container>
+        </ul>
+        
+      </nav>
+      
+      
+      <label class="logo" *ngIf="!checkIfUserLogedIn()">{{logedUserName}}</label>
+    </div>
+  </header>

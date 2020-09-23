@@ -1,0 +1,55 @@
+<h1>User Registration</h1>
+<hr>
+<form #form='ngForm' class='mb-4' autocomplete="off" (submit)="onSubmit(form)">
+    <div class="form-group">
+        <label>UserName</label>
+        <div class="col-md-8">
+        <input #UserName="ngModel" name="UserName" [(ngModel)] = "formModel.UserName" required>
+        <div class="md-errors-spacer" [hidden]="UserName.valid || UserName.untouched">
+            <div  *ngIf="UserName.errors && UserName.errors.required">
+                UserName is required
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <div class="col-md-8">
+        <input type="password" #Password="ngModel" name="Password" [(ngModel)] = "formModel.Password" required>
+        <div class="md-errors-spacer" [hidden]="Password.valid || Password.untouched">
+            <div  *ngIf="Password.errors && Password.errors.required">
+                Password is required
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="form-group">
+        <label>Name</label>
+        <div class="col-md-8">
+        <input #Name="ngModel" name="Name" [(ngModel)] = "formModel.Name">
+    </div>
+    </div>
+    <div class="form-group">
+        <label>Surname</label>
+        <div class="col-md-8">
+        <input #Surname="ngModel" name="Surname" [(ngModel)] = "formModel.Surname">
+    </div>
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <div class="col-md-8">
+        <input #Email="ngModel" name="Email" [(ngModel)] = "formModel.Email">
+    </div>
+    </div>
+    <hr>
+    <div class="form-group">
+            <button type="submit" class="btn-createContact"  [disabled]="form.invalid">Save</button>
+    </div>
+    <div class="form-group">
+        <div class="md-errors-spacer">
+            <div>
+                {{ErrorMessage}}
+            </div>
+        </div>    
+    </div>
+</form>
